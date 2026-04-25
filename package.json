@@ -1,0 +1,36 @@
+{
+  "name": "vethouse-treatments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloud-vethouse/vethouse-treatments.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cloud-vethouse/vethouse-treatments/issues"
+  },
+  "homepage": "https://github.com/cloud-vethouse/vethouse-treatments#readme",
+  "dependencies": {
+    "@hono/node-server": "^2.0.0",
+    "@hono/zod-validator": "^0.7.6",
+    "dotenv": "^17.4.2",
+    "hono": "^4.12.15",
+    "mongoose": "^9.5.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
