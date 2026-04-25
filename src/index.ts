@@ -1,7 +1,9 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
+import { swaggerUI } from '@hono/swagger-ui';
 import 'dotenv/config';
 import connectDB from './config/db';
+import openApiSpec from './docs/openapi';
 import consultaRoutes from './routes/consultaRoutes';
 
 connectDB();
@@ -15,6 +17,9 @@ app.get('/health', (c) => {
     timestamp: new Date().toISOString()
   });
 });
+
+app.get('/openapi.json', (c) => c.json(openApiSpec));
+app.get('/docs', swaggerUI({ url: '/openapi.json' }));
 
 app.route('/api/v1/consultas', consultaRoutes);
 

@@ -7,9 +7,9 @@ const connectDB = async () => {
     if (!uri) throw new Error('MONGODB_URI no está definido en el .env');
 
     await mongoose.connect(uri);
-    console.log('🔥 MongoDB conectado exitosamente (MS3)');
+    console.log('MongoDB conectado exitosamente (MS3)');
   } catch (error) {
-    console.error('❌ Error conectando a MongoDB:', error);
+    console.error('Error conectando a MongoDB:', error);
     process.exit(1);
   }
 };
