@@ -10,6 +10,8 @@ export interface IConsulta extends Document {
   tratamientos: Array<{
     tipo: string;
     descripcion: string;
+    costo_referencial: number;
+    estado: string;
   }>;
 }
 
@@ -22,7 +24,9 @@ const ConsultaSchema: Schema = new Schema({
   diagnostico: { type: String, required: true },
   tratamientos: [{
     tipo: { type: String, required: true },
-    descripcion: { type: String, required: true }
+    descripcion: { type: String, required: true },
+    costo_referencial: { type: Number, default: 0 },
+    estado: { type: String, default: 'Completado' }
   }]
 });
 
