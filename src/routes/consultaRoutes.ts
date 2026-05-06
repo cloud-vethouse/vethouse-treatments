@@ -1,7 +1,9 @@
 import { Hono } from 'hono';
-import { crearConsulta, obtenerConsultasPorMascota } from '../controllers/consultaController';
+import { crearConsulta, obtenerConsultas, obtenerConsultasPorMascota } from '../controllers/consultaController';
 
 const router = new Hono();
+
+router.get('/', obtenerConsultas);
 
 // Ruta para que el ms2 o el veterinario manden la consulta
 router.post('/', crearConsulta);
